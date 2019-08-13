@@ -1,0 +1,28 @@
+[
+  {
+    "parent": "Pricebook2",
+    "where": " IsStandard = false ",
+    "unmappedFields": ["IsStandard", "IsArchived"],
+    "externalIdField": "ExternalKey__c",
+    "children": [
+      {
+        "parentMappedField": "Pricebook2Id",
+        "childObject": "PricebookEntry",
+        "externalIdField": "ExternalKey__c",
+        "where": " Pricebook2.IsActive=true And Pricebook2.IsStandard = false  AND Pricebook2Id != null And Product2Id != null ",
+        "sequence": 1,
+        "unmappedFields": ["ProductCode", "Name"],
+        "lookups": [
+          {
+            "lookupMappedField": "Product2Id",
+            "lookupObject": "Product2",
+            "where": " Name != null ",
+            "keys": [
+              "Name"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

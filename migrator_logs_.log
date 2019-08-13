@@ -1,0 +1,77 @@
+2019-08-09 20:51:53 DEBUG MigrableObjectFactory:88 - mappingFile=
+[
+  {
+    "parent": "PricebookEntry",
+    "where": " IsActive = true And Pricebook2.IsStandard = true AND Pricebook2Id != null ",
+    "unmappedFields": ["ProductCode", "Name"],
+    "lookups": [
+      {
+        "lookupMappedField": "Pricebook2Id",
+        "lookupObject": "Pricebook2",
+        "where":" IsStandard = true ",
+        "keys": [
+          "Name",
+          "IsActive",
+          "IsStandard"
+        ]
+      },
+      {
+        "lookupMappedField": "Product2Id",
+        "lookupObject": "Product2",
+        "keys": [
+          "Name"
+        ]
+      }
+    ]
+  }
+]
+2019-08-09 20:51:53 DEBUG MigrableObjectFactory:91 - objectMapping.getRelationType()=lookup
+2019-08-09 20:51:53 DEBUG MigrableObjectFactory:88 - mappingFile=
+[
+  {
+    "parent": "Pricebook2",
+    "where": " IsStandard = false ",
+    "unmappedFields": ["IsStandard", "IsArchived"],
+    "children": [
+      {
+        "parentMappedField": "Pricebook2Id",
+        "childObject": "PricebookEntry",
+        "where": " Pricebook2.IsActive=true And Pricebook2.IsStandard = false  AND Pricebook2Id != null And Product2Id != null ",
+        "sequence": 1,
+        "unmappedFields": ["ProductCode", "Name"],
+        "lookups": [
+          {
+            "lookupMappedField": "Product2Id",
+            "lookupObject": "Product2",
+            "where": " Name != null ",
+            "keys": [
+              "Name"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
+
+2019-08-09 20:51:53 DEBUG MigrableObjectFactory:91 - objectMapping.getRelationType()=masterdetail
+2019-08-09 20:52:27 DEBUG SfdcApiServiceImpl:100 - Running SF query for [PricebookEntry]
+2019-08-09 20:52:27 DEBUG SfdcApiServiceImpl:950 - sforceObject.query=SELECT UseStandardPrice,UnitPrice,Product2Id,ProductCode,IsActive,Pricebook2Id,Id,Name  FROM PricebookEntry WHERE  IsActive = true And Pricebook2.IsStandard = true AND Pricebook2Id != null 
+2019-08-09 20:52:27 DEBUG SfdcApiServiceImpl:881 - query:SELECT UseStandardPrice,UnitPrice,Product2Id,ProductCode,IsActive,Pricebook2Id,Id,Name  FROM PricebookEntry WHERE  IsActive = true And Pricebook2.IsStandard = true AND Pricebook2Id != null 
+2019-08-09 20:52:28 DEBUG SfdcApiServiceImpl:901 - No records found.
+2019-08-09 20:52:28 DEBUG SfdcApiServiceImpl:131 - SF query for type [PricebookEntry] took [884]ms
+2019-08-09 20:52:28 DEBUG SfdcApiServiceImpl:214 - Lookup: Running SF query for [Pricebook2]
+2019-08-09 20:52:28 DEBUG SfdcApiServiceImpl:950 - sforceObject.query=SELECT IsArchived,IsStandard,Description,IsActive,Id,Name  FROM Pricebook2 WHERE  IsStandard = true 
+2019-08-09 20:52:28 DEBUG SfdcApiServiceImpl:881 - query:SELECT IsArchived,IsStandard,Description,IsActive,Id,Name  FROM Pricebook2 WHERE  IsStandard = true 
+2019-08-09 20:52:29 DEBUG SfdcApiServiceImpl:899 - 
+Logged-in user can see 1 Pricebook2 records.
+2019-08-09 20:52:29 DEBUG SfdcApiServiceImpl:269 - SF query for type [Pricebook2] took [1272]ms
+2019-08-09 20:52:29 DEBUG SfdcApiServiceImpl:214 - Lookup: Running SF query for [Pricebook2]
+2019-08-09 20:52:29 DEBUG SfdcApiServiceImpl:950 - sforceObject.query=SELECT IsArchived,IsStandard,Description,IsActive,Id,Name  FROM Pricebook2 WHERE  IsStandard = true 
+2019-08-09 20:52:29 DEBUG SfdcApiServiceImpl:881 - query:SELECT IsArchived,IsStandard,Description,IsActive,Id,Name  FROM Pricebook2 WHERE  IsStandard = true 
+2019-08-09 20:52:30 DEBUG SfdcApiServiceImpl:899 - 
+Logged-in user can see 1 Pricebook2 records.
+2019-08-09 20:52:30 DEBUG SfdcApiServiceImpl:269 - SF query for type [Pricebook2] took [810]ms
+2019-08-09 20:52:30 DEBUG SfdcApiServiceImpl:214 - Lookup: Running SF query for [Product2]
+2019-08-09 20:52:30 DEBUG SfdcApiServiceImpl:950 - sforceObject.query=SELECT Copy_of_SLI_to_SSD_Notes__c,Global_Watch_List_Text__c,SLCP_Upgrade_Base_Product__c,SVMXC__Product_Cost__c,Global_Watch_List_Indicator__c,ESMX_Lab_Office_Number_LU__c,SLCP_Indicator_del__c,ESMX_Logistics_Handling_Group__c,System_Language__c,Radio_Frequency_Coil_Indicator__c,Trackwise_Date__c,Name,Plant__c,Hazardous_Material__c,ESMX_DChain__c,Business_Line_Description__c,Exchange_Price__c,Sales_Mag__c,SVMXC__Stockable__c,number_of_search_product__c,Global_Product_Group__c,SAP_Product_Group_Description__c,DisplayUrl,PH4_Code__c,ESMX_Lab_Office_Number__c,MTTR__c,ESMX_Serial_Number_Profile__c,ProductCode,Software_Version_Number__c,SVMXC__Product_Line__c,SVMXC__Inherit_Parent_Warranty__c,Watch_List_Description__c,Multivendor_Flag__c,SLCP_Indicator__c,Product_Modality__c,ESMX_Software_Catalog_Deletion_Flag__c,Global_Watch_List_Flag__c,ESMX_ProdToProduct_Hierarchy__c,ESMX_Material_Authorization_Group__c,PH2_Code__c,SVMXC__Product_Type__c,SVMXC__Select__c,Id,SLI_to_SSD_NOTES__c,Business_Unit__c,ESMX_LHG_Description__c,Description,EOS__c,IsActive,Weight_Unit__c,ESMX_MIC__c,SVMXC__SM_External_ID__c,StockKeepingUnit,Business_Group__c,PH1_Description__c,End_of_Life_EOL__c,ExternalDataSourceId,Product_Group__c,Weight__c,Sub_Modality_Field__c,Product_Hierarchy_Basic__c,PH4_Description__c,Local_Watch_List_Flag__c,SVMXC__Enable_Serialized_Tracking__c,Hidden_Countries_for_CP__c,PH3_Description__c,SVMXC__Unit_Of_Measure__c,SLI_to_SSD_Text__c,Standard_Price__c,Traceability_Flag__c,SAP_product_group__c,ExternalId,Contract_Coverage__c,ESMX_Default_Skill__c,Old_Product_Number__c,IsArchived,Unit_of_Measure__c,SVMXC__Replacement_Available__c,ESMX_Record_Modified__c,PH1_Code__c,PH2_Description__c,QuantityUnitOfMeasure,Family,SAP_External_ID__c,ESMX_Logistic_handling__c,EMS_Product_Upgraded__c,Main_Sub_Block__c,PH3_Code__c,SVMXC__Tracking__c  FROM Product2
+2019-08-09 20:52:30 DEBUG SfdcApiServiceImpl:881 - query:SELECT Copy_of_SLI_to_SSD_Notes__c,Global_Watch_List_Text__c,SLCP_Upgrade_Base_Product__c,SVMXC__Product_Cost__c,Global_Watch_List_Indicator__c,ESMX_Lab_Office_Number_LU__c,SLCP_Indicator_del__c,ESMX_Logistics_Handling_Group__c,System_Language__c,Radio_Frequency_Coil_Indicator__c,Trackwise_Date__c,Name,Plant__c,Hazardous_Material__c,ESMX_DChain__c,Business_Line_Description__c,Exchange_Price__c,Sales_Mag__c,SVMXC__Stockable__c,number_of_search_product__c,Global_Product_Group__c,SAP_Product_Group_Description__c,DisplayUrl,PH4_Code__c,ESMX_Lab_Office_Number__c,MTTR__c,ESMX_Serial_Number_Profile__c,ProductCode,Software_Version_Number__c,SVMXC__Product_Line__c,SVMXC__Inherit_Parent_Warranty__c,Watch_List_Description__c,Multivendor_Flag__c,SLCP_Indicator__c,Product_Modality__c,ESMX_Software_Catalog_Deletion_Flag__c,Global_Watch_List_Flag__c,ESMX_ProdToProduct_Hierarchy__c,ESMX_Material_Authorization_Group__c,PH2_Code__c,SVMXC__Product_Type__c,SVMXC__Select__c,Id,SLI_to_SSD_NOTES__c,Business_Unit__c,ESMX_LHG_Description__c,Description,EOS__c,IsActive,Weight_Unit__c,ESMX_MIC__c,SVMXC__SM_External_ID__c,StockKeepingUnit,Business_Group__c,PH1_Description__c,End_of_Life_EOL__c,ExternalDataSourceId,Product_Group__c,Weight__c,Sub_Modality_Field__c,Product_Hierarchy_Basic__c,PH4_Description__c,Local_Watch_List_Flag__c,SVMXC__Enable_Serialized_Tracking__c,Hidden_Countries_for_CP__c,PH3_Description__c,SVMXC__Unit_Of_Measure__c,SLI_to_SSD_Text__c,Standard_Price__c,Traceability_Flag__c,SAP_product_group__c,ExternalId,Contract_Coverage__c,ESMX_Default_Skill__c,Old_Product_Number__c,IsArchived,Unit_of_Measure__c,SVMXC__Replacement_Available__c,ESMX_Record_Modified__c,PH1_Code__c,PH2_Description__c,QuantityUnitOfMeasure,Family,SAP_External_ID__c,ESMX_Logistic_handling__c,EMS_Product_Upgraded__c,Main_Sub_Block__c,PH3_Code__c,SVMXC__Tracking__c  FROM Product2

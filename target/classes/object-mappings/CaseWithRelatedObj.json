@@ -1,0 +1,319 @@
+[
+  {
+    "parent": "Case",
+    "children": [
+	  {
+		"parentMappedField": "Case__c",
+		"childObject": "TW_Updates__c",
+		"sequence": 1
+	  },
+	  {
+        "parentMappedField": "Case__c",
+        "childObject": "ASO_Header__c",
+        "sequence": 2
+      },
+      {
+        "parentMappedField": "Case__c",
+        "childObject": "Labor__c",
+        "sequence": 3,
+        "lookups": [
+          {
+            "lookupMappedField": "FSE_Name__c",
+            "lookupObject": "Contact",
+            "keys": [
+              "Name"
+            ]
+          }
+        ]         
+      },
+      {
+      	"parentMappedField": "Case__c",
+        "childObject": "NOOC_Tasks_Activities__c",
+        "sequence": 3,
+       	"lookups": [
+          {
+            "lookupMappedField": "Completed_By__c",
+            "lookupObject": "User",
+            "keys": [
+              "Name"
+            ]
+          }
+        ]      
+      },
+      {
+      	"parentMappedField": "SVMXC__Case__c",
+        "childObject": "SVMXC__Case_Tracker__c",
+        "sequence": 4,
+        "lookups": [
+          {
+            "lookupMappedField": "SVMXC__RMA_Shipment_Ref__c",
+            "lookupObject": "SVMXC__RMA_Shipment_Order__c",
+            "keys": [
+              "Name"
+            ]
+          },
+          {
+            "lookupMappedField": "SVMXC__Waiting_On_Contact__c",
+            "lookupObject": "SVMXC__Waiting_On_Contact__c",
+            "keys": [
+              "Name"
+            ]
+          },
+          {
+            "lookupMappedField": "SVMXC__Service_Order__c",
+            "lookupObject": "SVMXC__Service_Order__c",
+            "keys": [
+              "Name"
+            ]
+          }
+        ]      
+      },
+      {
+      	"parentMappedField": "Case__c",
+        "childObject": "Case_Activity__c",
+        "sequence": 5,
+        "lookups": [
+          {
+            "lookupMappedField": "Contact__c",
+            "lookupObject": "Contact",
+            "keys": [
+              "Name"
+            ]
+          },
+          {
+            "lookupMappedField": "Escalation_Case__c",
+            "lookupObject": "Case",
+            "keys": [
+              "Name"
+            ]
+          },
+          {
+            "lookupMappedField": "Reference_Case__c",
+            "lookupObject": "Case",
+            "keys": [
+              "Name"
+            ]
+          }
+        ] 
+      },
+      {
+      	"parentMappedField": "SVMXC__Case__c",
+        "childObject": "SVMXC__Case_Line__c",
+        "sequence": 6,
+        "lookups": [
+          {
+            "lookupMappedField": "ESMX_Account__c",
+            "lookupObject": "Account",
+            "keys": [
+              "Name"
+            ]
+          },
+          {
+            "lookupMappedField": "SVMXC__Entitlement_History__c",
+            "lookupObject": "SVMXC__Entitlement_History__c",
+            "keys": [
+              "Name"
+            ]
+          },
+          {
+            "lookupMappedField": "SVMXC__Installed_Product__c",
+            "lookupObject": "SVMXC__Installed_Product__c",
+            "keys": [
+              "Name"
+            ]
+          },
+          {
+            "lookupMappedField": "ESMX_Investigated_Installed_Product__c",
+            "lookupObject": "SVMXC__Installed_Product__c",
+            "keys": [
+              "Name"
+            ]
+          },
+          {
+            "lookupMappedField": "SVMXC__Location__c",
+            "lookupObject": "SVMXC__Site__c",
+            "keys": [
+              "Name"
+            ]
+          },{
+            "lookupMappedField": "SVMXC__Product__c",
+            "lookupObject": "Product2",
+            "keys": [
+              "Name"
+            ]
+          },
+          {
+            "lookupMappedField": "ESMX_Related_Case_Line__c",
+            "lookupObject": "SVMXC__Case_Line__c",
+            "keys": [
+              "Name"
+            ]
+          },
+          {
+            "lookupMappedField": "SVMXC__Route_Card__c",
+            "lookupObject": "SVMXC__Route_Card__c",
+            "keys": [
+              "Name"
+            ]
+          }
+        ]
+      },
+	  {
+      	"parentMappedField": "Case__c",
+        "childObject": "Shopping_Cart__c",
+        "sequence": 7,
+        "lookups": [
+          {
+            "lookupMappedField": "Labor_Operation_Number__c",
+            "lookupObject": "Labor__c",
+            "keys": [
+              "Name"
+            ]
+          },
+		  {
+            "lookupMappedField": "NOOC_Tasks_Activities__c",
+            "lookupObject": "NOOC_Tasks_Activities__c",
+            "keys": [
+              "Name"
+            ]
+          },
+		  {
+            "lookupMappedField": "Partner_Function__c",
+            "lookupObject": "Account_to_Account_Partner_Junction__c",
+            "keys": [
+              "Name"
+            ]
+          }
+		]
+	  }
+	],	  
+	"lookups": [
+		 {
+		 "lookupMappedField": "ContactId",
+		 "lookupObject": "Contact",
+		 "keys": [
+		  "Name"
+		 ]
+	   },
+	   {
+		 "lookupMappedField": "AccountId",
+		 "lookupObject": "Account",
+		 "keys": [
+		  "Name"
+		 ]
+	   },
+	   {
+		 "lookupMappedField": "AssetId",
+		 "lookupObject": "Asset",
+		 "keys": [
+		  "Name"
+		 ]
+	   },
+	   {
+		 "lookupMappedField": "Product2Id",
+		 "lookupObject": "Product2",
+		 "keys": [
+		  "Name"
+		 ]
+	   },
+	   {
+		 "lookupMappedField": "SVMXC__BW_Territory__c",
+		 "lookupObject": "Territory",
+		 "keys": [
+		  "Name"
+		 ]
+	   },
+	   {
+		 "lookupMappedField": "SVMXC__Product__c",
+		 "lookupObject": "Product2",
+		 "keys": [
+		  "Name"
+		 ]
+	   },
+	   {
+		 "lookupMappedField": "ESMX_Reference_IP_Product__c",
+		 "lookupObject": "Product2",
+		 "keys": [
+		  "Name"
+		 ]
+	   },
+	   {
+		 "lookupMappedField": "Reference_Product__c",
+		 "lookupObject": "Product2",
+		 "keys": [
+		  "Name"
+		 ]
+	   },
+	   {
+		 "lookupMappedField": "SVMXC__Component__c",
+		 "lookupObject": "SVMXC__Installed_Product__c",
+		 "keys": [
+		  "Name"
+		 ]
+	   },
+	   {
+		 "lookupMappedField": "Line_Item__c",
+		 "lookupObject": "Line_Item__c",
+		 "keys": [
+		  "Name"
+		 ]
+	   },
+	   {
+		 "lookupMappedField": "Line_Item_Service_Contract__c",
+		 "lookupObject": "ServiceContract",
+		 "keys": [
+		  "Name"
+		 ]
+	   },
+	   {
+		 "lookupMappedField": "ESMX_Escalated_Installed_Product__c",
+		 "lookupObject": "SVMXC__Installed_Product__c",
+		 "keys": [
+		  "Name"
+		 ]
+	   },
+	   {
+		 "lookupMappedField": "SVMXC__Top_Level__c",
+		 "lookupObject": "SVMXC__Installed_Product__c",
+		 "keys": [
+		  "Name"
+		 ]
+	   },
+	   {
+		 "lookupMappedField": "ESMX_Reference_Installed_Product__c",
+		 "lookupObject": "SVMXC__Installed_Product__c",
+		 "keys": [
+		  "Name"
+		 ]
+	   },
+	   {
+		 "lookupMappedField": "Customer_Service_Contract__c",
+		 "lookupObject": "ServiceContract",
+		 "keys": [
+		  "Name"
+		 ]
+	   },
+	   {
+		 "lookupMappedField": "Service_Contract__c",
+		 "lookupObject": "ServiceContract",
+		 "keys": [
+		  "Name"
+		 ]
+	   },
+	   {
+		 "lookupMappedField": "SVMXC__Service_Contract__c",
+		 "lookupObject": "SVMXC__Service_Contract__c",
+		 "keys": [
+		  "Name"
+		 ]
+	   },
+	   {
+		 "lookupMappedField": "SVMXC__Site__c",
+		 "lookupObject": "SVMXC__Site__c",
+		 "keys": [
+		  "Name"
+		 ]
+	   }
+	]
+  }
+]

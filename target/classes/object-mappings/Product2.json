@@ -1,0 +1,14 @@
+[
+  {
+    "parent": "Product2",
+     "where": " family = 'ULTRASOUND'",
+    "unmappedFields": [
+      "Description",
+      "Copy_of_SLI_to_SSD_Notes__c",
+      "Global_Watch_List_Text__c",
+      "Hidden_Countries_for_CP__c",
+	  "SLI_to_SSD_Text__c",
+	  "Watch_List_Description__c"
+    ]
+  }
+]

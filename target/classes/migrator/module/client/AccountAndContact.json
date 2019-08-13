@@ -1,0 +1,22 @@
+[
+  {
+    "parent": "Account",
+    "children": [
+      {
+        "parentMappedField": "AccountId",
+        "childObject": "Contact",
+		"sequence": 1
+      }
+    ],	
+	"lookups": [
+      {
+        "lookupMappedField": "Id",
+        "lookupObject": "Account",        
+        "keys": [
+          "Name",
+          "Customer_Portal_Parent_Account__c"
+        ]
+      }
+    ]
+  }
+]

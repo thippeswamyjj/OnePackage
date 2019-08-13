@@ -1,0 +1,6 @@
+[
+  {
+    "parent": "Product2",
+    "where": "Createddate < today limit 100"
+  }
+]
